@@ -1,0 +1,72 @@
+.THIS .wizard a {
+    padding: 20px 12px 20px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    min-width: 20%;
+    margin-left: 3px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: #CCCCCC;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.THIS .wizard.small a {
+    padding: 5px 12px 5px;
+    color:white;
+}
+
+.THIS .wizard.small:not(.left-arrow) a:before {
+    border-top: 15px inset transparent;
+    border-bottom: 15px inset transparent;
+    border-left: 15px solid #FFFFFF;
+}
+.THIS .wizard.small:not(.left-arrow) a:after {
+    border-top: 15px inset transparent;
+    border-bottom: 15px inset transparent;
+    border-left: 15px solid #CCCCCC;
+    right: -15px;
+}
+.THIS .wizard:not(.left-arrow) a:before {
+    width: 0;
+    height: 0;
+    border-top: 30px inset transparent;
+    border-bottom: 30px inset transparent;
+    border-left: 30px solid #FFFFFF;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+}
+.THIS .wizard:not(.left-arrow) a:after {
+    width: 0;
+    height: 0;
+    border-top: 30px inset transparent;
+    border-bottom: 30px inset transparent;
+    border-left: 30px solid #CCCCCC;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -30px;
+    z-index: 2;
+}
+.THIS .wizard.small a:first-child:before {
+    border: none;
+}
+.THIS .wizard a.current{
+     background: #3E95D6;
+}
+.THIS .wizard a.current:after, .THIS .wizard a.progress-current:after {
+    border-left-color: #3E95D6 !important;
+}
+.THIS .slds-icon{
+    fill:white;
+}
+.THIS .label:hover{
+    background: #DADFE1;
+}
+.THIS .addIcon:hover{
+    background: #DADFE1;
+}

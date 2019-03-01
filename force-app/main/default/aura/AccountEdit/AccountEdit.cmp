@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <lightning:button iconName="utility:edit" variant="brand" label="CreateAccount" onclick="{!c.editRecord}"/>
+	
+    <aura:attribute name="refreshAccounts" type="Aura.Action" />
+    <aura:handler event="force:refreshView" action="{!c.isRefreshed}" />
+</aura:component>

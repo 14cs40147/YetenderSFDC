@@ -1,0 +1,22 @@
+<apex:page controller="Actioncon" >
+ 
+ <apex:form >
+ 
+ <Apex:outputPanel id="TestCon">
+ <apex:outputText value="Click Me!: {!count}"/>
+ <!--
+ <apex:actionSupport event="onclick" action="{!incrementCount}" reRender="TestCon" status="Ststus111"/>
+ -->
+ <apex:actionPoller action="{!incrementCount}" reRender="TestCon" interval="5"/>
+ 
+</Apex:outputPanel>
+
+ <apex:actionstatus id="Ststus111" startText="(Increment....)" stopText="Done!!"
+  ></apex:actionstatus>
+ 
+ 
+ 
+ </apex:form>
+ 
+ 
+</apex:page>

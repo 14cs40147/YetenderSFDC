@@ -1,0 +1,22 @@
+<aura:component >
+    <aura:attribute name="cont" type="Contact"/>
+    
+    <tr>
+        <td data-label="FirstName">
+            <div class="slds-truncate" title="{!v.cont.FirstName}">{!v.cont.FirstName}</div>
+        </td>
+        <td data-label="LastName">
+            <div class="slds-truncate" title="{!v.cont.LastName}" onclick="{!c.showRecord}">{!v.cont.LastName}</div>
+        </td>
+        <td data-label="Email">
+            <div class="slds-truncate" title="{!v.cont.Email}">{!v.cont.Email}</div>
+        </td>
+        <td data-label="Phone">
+            <div class="slds-truncate" title="{!v.cont.Phone}">{!v.cont.Phone}</div>
+        </td>
+        <td data-label="Phone">
+            <div class="slds-truncate" title="{!v.cont.LastName}"><Lightning:icon iconName="utility:preview" size="small"></Lightning:icon></div>
+        </td>
+    </tr>
+    
+</aura:component>

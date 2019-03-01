@@ -1,0 +1,30 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+   
+    <aura:attribute name="currentStep" type="Integer" default="1" />
+    <aura:attribute name="direction" type="String" default="right" />
+    <aura:attribute name="dotsList" type="List" /> 
+   
+    <div class="slds-page-header" style="background-color:DodgerBlue;">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="Page header"></span>
+            </div>
+            <div class="slds-media__body">
+                <h1 class="slds-page-header__title slds-truncate slds-align-middle" style="color:white;" title="Trackwise to Digital Trackwise">Trackwise to Digital Trackwise</h1>
+            </div>
+        </div>
+    </div>
+   
+    <!-- slider starts here -->
+    <div class="slideshow-container ">
+        <div class="mySlides fade" aura:id="componentHolder"/>
+        <div style="text-align:center;margin-top:10%;" >
+            <aura:iteration items="{!v.dotsList}" var="item">
+                <span class="{!item}" />
+            </aura:iteration>
+         </div>
+    </div>         
+    <!-- slider ends here -->
+    
+</aura:component>

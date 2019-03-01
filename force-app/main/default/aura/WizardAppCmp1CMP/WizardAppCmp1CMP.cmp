@@ -1,0 +1,16 @@
+<aura:component >
+    
+    <div class="slds-grid slds-box slds-m-top_small slds-m-left_small slds-m-right_small">
+        <div class="slds-col slds-size--10-of-12">
+            left side content goes here
+        </div>
+        <div class="slds-col slds-size--2-of-12">
+            right side content goes here
+        </div>
+    </div>
+    
+    <div style="height:10%;background-color:green;">
+        sfgsa
+    </div>
+    
+</aura:component>

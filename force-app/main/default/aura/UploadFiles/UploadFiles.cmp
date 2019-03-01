@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable" >
+    <aura:attribute name="myRecordId" type="String"  description="Record to which the files should be attached" />
+    <lightning:fileUpload label="Attach receipt" 
+                          multiple="true" 
+                          accept=".pdf, .png"
+                          recordId="{!v.myRecordId}" 
+                          disabled="false"
+                          onuploadfinished="{!c.handleUploadFinished}" />
+</aura:component>

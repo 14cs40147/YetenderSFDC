@@ -1,0 +1,16 @@
+<aura:component >
+    <aura:attribute name="currentStep" type="Integer" default="1" />
+   <aura:attribute name="direction" type="String" default="left" />
+    <aura:attribute name="updateStep" type="Aura.Action"  />
+    <center class="{!v.direction}" style="background-color:grey;">
+        <span data-action="prev" class="slds-float_left slds-m-left_small" onclick="{!c.updateStep}" style="background-color:white;">
+            <lightning:icon iconName="utility:chevronleft" size="small"/>
+        </span>
+        <span data-action="next" class="slds-float_right slds-m-right_small" onclick="{!c.updateStep}" style="background-color:white;">
+            <lightning:icon iconName="utility:chevronright" size="small"/>
+        </span><br/>
+        Compoennt 2
+        
+          
+    </center>
+</aura:component>

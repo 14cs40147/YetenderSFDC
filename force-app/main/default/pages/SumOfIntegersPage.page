@@ -1,0 +1,17 @@
+<apex:page controller="SumOfIntegers">
+    <apex:form >
+        <apex:pageBlock title="Number selection">
+            <apex:pageBlockButtons ><apex:commandButton title="Process" value="Process" action="{!process}"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:outputPanel rendered="{!showResult}">The sum is : {!countSum}</apex:outputPanel>
+            <apex:pageBlockSection columns="2">
+                <apex:repeat value="{!lstNumWrapper}" var="cnt">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >{!cnt.count}</apex:outputLabel>
+                        <apex:inputCheckbox value="{!cnt.isChecked}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

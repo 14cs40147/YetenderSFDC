@@ -1,0 +1,9 @@
+<aura:component >
+    <ltng:require scripts="/resource/TinyMCE/tinymce.min.js" />  
+
+
+
+    
+  <button onclick="{!c.doInit}">Click Me</button>  
+ <textarea id="textAreaId"></textarea>  
+</aura:component>

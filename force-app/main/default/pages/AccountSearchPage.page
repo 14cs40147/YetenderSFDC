@@ -1,0 +1,137 @@
+<apex:page controller="AccountSearchController" showHeader="false" standardStylesheets="false" sidebar="false" docType="html-5.0" applyBodyTag="False" applyHtmlTag="False">
+    <style>
+        .wrapperDiv{
+        margin:2px;
+        }
+        .pageHea der{
+        font-size:20px;
+        color:white;
+        background-color:#385FCB;
+        padding:5px;
+        text-align:center;
+        }
+        .searchPannelHeader{
+        border: 3px solid #385FCB;
+        margin-top:2px;
+        font-size:16px;
+        padding:5px;
+        }
+        .accountList{
+        margin-top:5px;
+        
+        }
+        .accountList .accountListTableHeader{
+        color:white;
+        background-color:#385FCB;
+        margin-top:2px;
+        font-size:16px;
+        padding:5px;
+        }
+        .accountListTableHolder{
+        margin-top:2px;
+        font-size:16px;
+        padding:5px;
+        }
+    </style>
+    <apex:slds />
+    <body class="slds-scope wrapperDiv">
+        <div class="pageHeader"> Account Search</div>
+        <apex:form id="searchForm">
+            <div class="searchPannelHeader">
+                Search Filter
+                <div class="searchPannelBody ">
+                    
+                    <div class="slds-form slds-form_compound">
+                        
+                        <fieldset class="slds-form-element">
+                            <div class="slds-form-element__group">
+                                <div class="slds-form-element__row">
+                                    <div class="slds-form-element slds-size_2-of-5">
+                                        <label class="slds-form-element__label" for="input-01">Name</label>
+                                        <apex:inputField value="{!acc.Name}" styleClass="slds-input" html-placeholder="xyz account" required="formnovalidate" />
+                                    </div>
+                                    <div class="slds-form-element slds-size_2-of-5">
+                                        <label class="slds-form-element__label" for="input-02">Industry</label>
+                                        <apex:inputField value="{!acc.Industry}" styleClass="slds-input" html-placeholder="select industry"/>
+                                    </div>
+                                    <div class="slds-form-element slds-size_1-of-5">
+                                        <div class="slds-clearfix">
+                                            <div class="slds-clearfix">
+                                                <div class="slds-float_right" style="margin-top:8%;margin-right:2%;">
+                                                    <apex:commandButton styleClass="slds-button slds-button_brand" value="Search" title="Search" ></apex:commandButton>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </apex:form>
+        <div class="accountList" id="accountList">
+            <div class="accountListTableHeader">
+                Account List
+                <span style="float:right;font-size:12px;">Page #{!pageNumber} of {!pages}</span>
+            </div>
+            <div class="accountListTableHolder">
+                <apex:form >
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-no-row-hover">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Sl No">Sl No.</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Name">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Industry">Industry</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Number">Number</div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:12px;">
+                            <apex:variable value="{!1}" var="count" />
+                            <apex:repeat value="{!lstAccount}" var="acc">
+                                <tr>
+                                    <td data-label="Sl No.">
+                                        <div class="slds-truncate" title="Sl No.">{!count} <apex:variable value="{!count+1}" var="count" /> </div>
+                                    </td>
+                                    <td data-label="Account Name">
+                                        <div class="slds-truncate" title="{!acc.Name}">{!acc.Name}</div>
+                                    </td>
+                                    <td data-label="Account Industry">
+                                        <div class="slds-truncate" title="{!acc.Industry}">{!acc.Industry}</div>
+                                    </td>
+                                    <td data-label="Account Number">
+                                        <div class="slds-truncate" title="{!acc.AccountNumber}">{!acc.AccountNumber}</div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                    <div class="slds-clearfix" style="font-size:12px;margin-top:5px;">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right">
+                                <div class="slds-button-group" role="group">
+                                    <apex:commandLink action="{!first}" styleClass="slds-button slds-button_neutral" value="First"></apex:commandlink>
+                                    <apex:commandLink action="{!previous}" styleClass="slds-button slds-button_neutral" rendered="{!hasPrevious}" value="<< Previous"></apex:commandlink>
+                                    <apex:commandLink action="{!next}" styleClass="slds-button slds-button_neutral" rendered="{!hasNext}" value="Next >>"></apex:commandlink>
+                                    <apex:commandLink action="{!last}" styleClass="slds-button slds-button_neutral" value="Last"></apex:commandlink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </apex:form>
+            </div>
+            
+        </div>
+    </body>
+</apex:page>

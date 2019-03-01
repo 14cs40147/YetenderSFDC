@@ -1,0 +1,5 @@
+<apex:page controller="theController">
+<apex:pageMessage severity="Error" summary="First Error message on page" strength="1"></apex:pageMessage>
+<apex:pageMessage severity="Error" detail="Second Error message on page" strength="2"></apex:pageMessage>
+<apex:pageMessages ></apex:pageMessages>
+</apex:page>

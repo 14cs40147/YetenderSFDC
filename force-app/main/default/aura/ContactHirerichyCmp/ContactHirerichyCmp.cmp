@@ -1,0 +1,35 @@
+<aura:component controller="ContactHierarichyController">
+    <aura:attribute name="nodes" type="List" default="[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <table class="" style="margin-left:1%;">
+        <thead style="background-color:lightgrey;">
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Description">Description</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Action">Action</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.nodes}" var="node">
+                <tr>
+                    <td data-label="Name" style="{!'padding-left:'+node.Level+'%'}" class="slds-truncate">
+                        <div class="slds-truncate" title="Cloudhub"><lightning:icon iconName="utility:chevronright" size="xx-small" alternativeText="Indicates approval"/>{!node.LastName}</div>
+                    </td>
+                    <td data-label="Description">
+                        <div class="slds-truncate" title="Cloudhub">{!node.Title}</div>
+                    </td>
+                    <td data-label="Action">
+                        <div class="slds-truncate" title="Action">Add Child</div>
+                    </td>
+                </tr>
+            </aura:iteration> 
+        </tbody>
+    </table>
+</aura:component>

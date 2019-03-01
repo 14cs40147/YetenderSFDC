@@ -1,0 +1,4 @@
+<apex:page renderAs="pdf" >
+    My Name is Amit.
+    Working on SFDc
+</apex:page>

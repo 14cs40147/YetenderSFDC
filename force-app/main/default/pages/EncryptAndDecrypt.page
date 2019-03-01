@@ -1,0 +1,17 @@
+<apex:page controller="demoencrypt">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:selectList size="1" value="{!mode}">
+                    <apex:selectOption itemValue="encrypt"/>
+                    <apex:selectOption itemValue="decrypt"/>
+                </apex:selectList>
+                <apex:inputText value="{!source}"/>
+                <apex:outputText value="{!result}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!translate}" value="Translate"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

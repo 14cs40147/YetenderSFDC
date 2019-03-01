@@ -1,0 +1,37 @@
+<aura:component Controller="ContactController">
+    <aura:attribute name="cts" type="List"/>
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+    <lightning:spinner variant="brand" size="large" aura:id="spinner"/>
+
+    <div class="slds-table--header-fixed_container" >
+        <div class="slds-scrollable_y">
+            <table class="slds-table slds-table_bordered slds-table--header-fixed">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="FirstName">First Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="LastName">Last Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="Email">Email</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="Phone">Phone</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-cell-fixed" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.cts}" var="c">
+                        <c:TableColsCmp cont="{!c}"/>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</aura:component>

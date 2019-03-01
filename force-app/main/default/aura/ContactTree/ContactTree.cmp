@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="node" type="Object" />
+    <aura:iteration items="{!v.node.items}" var="node">
+        <c:ContactTree node="{!node}" />
+    </aura:iteration>
+    
+</aura:component>

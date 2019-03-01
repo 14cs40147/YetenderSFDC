@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="contactfield" type="String[]" default="FirstName,LastName,AccountId"/>    
+    
+        <lightning:recordForm aura:id="brokerForm"
+                              recordId="0037F00000shSFM"
+                              objectApiName="Contact"
+                              fields="FirstName,LastName"
+                              mode="edit"/>
+</aura:component>

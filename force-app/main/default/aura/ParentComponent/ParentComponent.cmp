@@ -1,0 +1,4 @@
+<aura:component >
+    <c:ChildComponent aura:id="childCmp"/>
+    <lightning:button label="Call Child Method"  onclick="{!c.callChild}"/>
+</aura:component>

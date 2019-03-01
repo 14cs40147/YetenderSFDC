@@ -1,0 +1,66 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" applyHtmlTag="false" controller="LightningVisualforceDemoController">
+    <html>
+        <head>
+            <!--Import Slds -->
+            <apex:slds />
+        </head>
+        <body>
+            <div class="slds-scope">
+                <!-- Page Header Begins -->
+                <div class="slds-page-header">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                                <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#Account" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-clearfix">
+                                <div class="slds-clearfix">
+                                    <div class="slds-float_left">
+                                        <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Yetender Poonia">Yetender Poonia</h1>
+                                        <p class="slds-text-body_small slds-line-height_reset">{!today()}</p>
+                                    </div>
+                                    <apex:form >
+                                    <apex:outputPanel rendered="{!if(isValidUser == true,false,true)}"  id="loginForm">
+                                        
+                                        <div class="slds-float_right">
+                                            <div class="demo-only" style="width: 440px;">
+                                                <div class="slds-form slds-form_compound">
+                                                    <fieldset class="slds-form-element">
+                                                        
+                                                        <div class="slds-form-element__group">
+                                                            <div class="slds-form-element__row">
+                                                                
+                                                                    <div class="slds-form-element slds-size_4-of-12">
+                                                                        <apex:inputText id="input-01" styleClass="slds-input"  value="{!userName}" html-placeholder="UserName"/>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size_4-of-12">
+                                                                        <apex:inputText id="input-02" styleClass="slds-input"  value="{!userPassword}"  html-placeholder="Password"/>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size_4-of-12">
+                                                                        <apex:commandButton styleClass="slds-button slds-button_stateful slds-not-selected slds-button_brand" value="Sign-in" action="{!doLogin}" />
+                                                                    </div>
+                                               
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </apex:outputPanel>
+                                                         </apex:form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Header Ends -->
+                
+            </div>
+        </body>
+    </html>
+</apex:page>

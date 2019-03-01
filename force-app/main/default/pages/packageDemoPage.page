@@ -1,0 +1,18 @@
+<apex:page controller="PackageController" showHeader="false" sidebar="false">
+    
+    
+    <apex:pageBlock title="Person Detail">
+        <apex:pageBlockSection columns="2">
+                <apex:outputText >Name</apex:outputText>
+                <apex:outputText value="{!pName}" />
+            
+            <apex:outputText >Age</apex:outputText>
+                <apex:outputText value="{!pAge}" />
+            
+            <apex:outputText >Home</apex:outputText>
+                <apex:outputText value="{!pHome}" />
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    
+</apex:page>

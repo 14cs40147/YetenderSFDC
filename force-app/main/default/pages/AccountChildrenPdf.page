@@ -1,0 +1,53 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" renderAs="pdf" controller="AccountChildrenPdf">
+    <head>
+        <style type="text/css" media="print">
+            @page {
+            @top-center {
+            content: element(header);
+            }
+            @bottom-left {
+            content: element(footer);
+            }
+            }
+            div.header {
+            padding: 15px;
+            position: running(header);
+            }
+            .docheader{
+            top:0;
+            }
+            div.footer {
+            display: block;
+            position: running(footer);
+            font-size:12px
+            }
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            .content{
+            padding-top:30px;
+            }
+        </style>
+    </head>
+    <div class="footer">
+        <hr/>
+        <div style="float:right">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+    </div>
+    <div class="content">
+        <apex:repeat value="{!accounts}" var="acc">
+            <div style="text-align:center;font-size:18px " class="header">
+                <p>
+                    <apex:outputText escape="false" value="{!acc.Name}" />
+                </p>
+                <hr/>
+                <apex:repeat value="{!acc.Contacts}" var="cts">
+                    {!cts.LastName}
+                </apex:repeat>
+                <p style="page-break-after: always;"></p>
+            </div>
+        </apex:repeat>
+    </div>
+</apex:page>

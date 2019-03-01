@@ -1,0 +1,36 @@
+<apex:page docType="html-5.0">
+     <head>
+        <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+        <script src="/soap/ajax/33.0/connection.js"></script>
+        <script>tinymce.init(
+            {
+                selector:'textarea',
+                statusbar: false,
+                height: "300",
+                resize: "both",
+                paste_data_images: true,
+                paste_word_valid_elements: "b,strong,i,em,h1,h2",
+                plugins: "hr,link, image, charmap, paste, print, preview, anchor, pagebreak, spellchecker, searchreplace, visualblocks, visualchars, code, fullscreen, insertdatetime, media, nonbreaking, save, table, directionality, emoticons, template, textcolor",
+                menubar: false,
+                toolbar: [ "save | undo redo removeformat | bold italic underline | cut copy paste searchreplace| alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | link unlink | hr pagebreak | forecolor backcolor | insertdatetime | table" ,
+                           "formatselect fontselect fontsizeselect", 
+                         ],
+                save_enablewhendirty: true,
+                save_onsavecallback: function() {
+                var ed = tinyMCE.get('LabNotesContent');
+                    ed.setProgressState(1);
+                    var record = new sforce.SObject("Account");
+                    
+                    var result = sforce.connection.update([record]);
+                     window.setTimeout(function() {
+                        ed.setProgressState(0); // Hide progress
+                    }, 3000);
+                }        
+            });
+            </script>
+    </head>
+    <body>
+       <textarea id="LabNotesContent" name="LabNotesContent">
+       </textarea>
+    </body>
+</apex:page>

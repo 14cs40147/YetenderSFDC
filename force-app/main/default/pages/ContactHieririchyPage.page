@@ -1,0 +1,9 @@
+<apex:page controller="ContactHieririchy">
+  
+  <apex:pageBlock title="Contact Hieririchy">
+      <apex:repeat value="{!lstWrapper}" var="w">
+          <apex:outputLabel value="{!w.cName}" escape="false"></apex:outputLabel> <br/>    
+      </apex:repeat>
+  </apex:pageBlock>
+  
+</apex:page>

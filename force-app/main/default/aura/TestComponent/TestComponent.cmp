@@ -1,0 +1,5 @@
+<aura:component >
+	<lightning:button label="button1" title="firstButton" aura:id="id1"></lightning:button>
+    <lightning:button label="button2" aura:id="id1"></lightning:button>
+    <lightning:button label="printIds" onclick="{!c.showIds}"></lightning:button>
+</aura:component>

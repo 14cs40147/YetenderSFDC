@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:attribute name="chkBox" type="String" />
+    
+    <lightning:input type="checkbox" label="Red" name="red"  checked="{!v.chkBox}"/>
+    <lightning:button iconName="utility:save" label="Save" onclick="{!c.SaveRecord}"/>
+</aura:component>

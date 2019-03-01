@@ -1,0 +1,23 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" docType="html-5.0"  applyBodyTag="False" applyHtmlTag="False">
+<head>
+  <title>Image Aspect Ratio Test</title>
+  <apex:slds /> 
+</head>
+
+<body class="slds-scope">
+    
+    <!-- BASIC GRID EXAMPLE -->
+<div class="slds-grid">
+  <div class="slds-col slds-size--4-of-12" style="background-color:green;">Column 1</div>
+  <div class="slds-col slds-size--8-of-12 " style="background-color:yellow; ">
+      <div class="sdls-scrollable" style="width:90rem">
+          <image src="http://images.sky-map.org/star_image/904/904969.jpeg" />
+      </div>
+       
+      
+  </div>
+</div>
+
+    
+</body>
+</apex:page>

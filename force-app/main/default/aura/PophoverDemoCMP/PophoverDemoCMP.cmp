@@ -1,0 +1,7 @@
+<aura:component >
+    <section class="slds-popover slds-nubbin_bottom-right" role="dialog" aria-label="Dialog Title" aria-describedby="dialog-body-id-7" style="position:absolute;">
+        <div class="slds-popover__body" id="dialog-body-id-7">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </section>
+</aura:component>

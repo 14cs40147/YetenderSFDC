@@ -1,0 +1,33 @@
+<apex:page Controller="TestPageController" extensions="Test1,Test2">
+  
+  <Apex:form >
+   <Apex:pageBlock >
+    <Apex:outputText value="{!Hello}"/>
+    &nbsp;
+     &nbsp;
+      &nbsp;
+       &nbsp;
+        &nbsp;
+         &nbsp;
+    <Apex:outputText value="{!Dupli}"/> 
+    
+    
+   
+   <apex:pageMessages ></apex:pageMessages>
+
+    <Apex:pageBlockSection title="Acc Name">
+     <apex:inputField value="{!Account.NAme}"/>
+     <apex:inputField value="{!Account.Phone}"/>
+     
+    </Apex:pageBlockSection>
+    
+    <Apex:pageBlockSection title="Rating" >
+     <apex:inputField value="{!Account.Rating}"/>
+    </Apex:pageBlockSection>
+    <Apex:commandButton Value="Save" Action="{!Save}"/>
+    <Apex:commandButton value="DoDelete" action="{!DODelete}"/>
+    
+       
+   </Apex:pageBlock>
+  </Apex:form>
+</apex:page>

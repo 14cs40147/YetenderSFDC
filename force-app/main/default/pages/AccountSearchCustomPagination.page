@@ -1,0 +1,109 @@
+<apex:page controller="AccountSearchCustomPaginationController" showHeader="false" standardStylesheets="false" sidebar="false" docType="html-5.0" applyBodyTag="False" applyHtmlTag="False">
+    <style>
+        .wrapperDiv{
+        margin:2px;
+        }
+        .pageHeader{
+        font-size:20px;
+        color:white;
+        background-color:#385FCB;
+        padding:5px;
+        text-align:center;
+        }
+        
+        .accountList{
+        margin-top:5px;
+        
+        }
+        .accountList .accountListTableHeader{
+        color:white;
+        background-color:#385FCB;
+        margin-top:2px;
+        font-size:16px;
+        padding:5px;
+        }
+        .accountListTableHolder{
+        margin-top:2px;
+        font-size:16px;
+        padding:5px;
+        }
+    </style>
+    <apex:slds />
+    <body class="slds-scope wrapperDiv">
+        <div class="pageHeader"> Account Search</div>
+        <apex:form id="accountListTableHolder">
+            <div class="accountList" id="accountList">
+                <div class="accountListTableHeader">
+                    Account List
+                    <span style="float:right;font-size:12px;"> Page #{!pageNumber} of {!pages}</span>
+                </div>
+                <div class="accountListTableHolder">
+                    
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-no-row-hover">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Sl No">Sl No.</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Name">Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Industry">Industry</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Account Number">Number</div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:12px;" id="tableBody">
+                            <apex:variable value="{!(pageNumber -1)*pageSize +1}" var="count" />
+                            <apex:repeat value="{!lstAccount}" var="acc">
+                                <tr>
+                                    <td data-label="Sl No.">
+                                        <div class="slds-truncate" title="Sl No.">{!count} <apex:variable value="{!count+1}" var="count" /> </div>
+                                    </td>
+                                    <td data-label="Account Name">
+                                        <div class="slds-truncate" title="{!acc.Name}">{!acc.Name}</div>
+                                    </td>
+                                    <td data-label="Account Industry">
+                                        <div class="slds-truncate" title="{!acc.Industry}">{!acc.Industry}</div>
+                                    </td>
+                                    <td data-label="Account Number">
+                                        <div class="slds-truncate" title="{!acc.AccountNumber}">{!acc.AccountNumber}</div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                        </tbody>
+                    </table>
+                    
+                    <div class="slds-clearfix" style="font-size:12px;margin-top:5px;">
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right">
+                                Show 
+                                <apex:selectList size="1" value="{!pageSize}">
+                                    <apex:actionSupport action="{!loadRecordsBasedOnChoice}" event="onchange" reRender="accountListTableHolder"/>
+                                    <apex:selectOption itemValue="5" itemLabel="5"/>
+                                    <apex:selectOption itemValue="10" itemLabel="10"/>
+                                    <apex:selectOption itemValue="15" itemLabel="15"/>
+                                    <apex:selectOption itemValue="20" itemLabel="20"/>
+                                </apex:selectList>
+                                Entries,
+                                <div class="slds-button-group" role="group">
+                                    <apex:commandLink action="{!first}" styleClass="slds-button slds-button_neutral" value="First" reRender="accountListTableHolder"></apex:commandlink>
+                                    <apex:commandLink action="{!previous}" styleClass="slds-button slds-button_neutral" rendered="{!pageNumber > 1}" reRender="accountListTableHolder" value="<< Previous"></apex:commandlink>
+                                    <apex:commandLink action="{!next}" styleClass="slds-button slds-button_neutral" rendered="{!pageNumber < pages}" reRender="accountListTableHolder" value="Next >>"></apex:commandlink>
+                                    <apex:commandLink action="{!last}" styleClass="slds-button slds-button_neutral" value="Last" reRender="accountListTableHolder"></apex:commandlink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+        </apex:form>
+    </body>
+</apex:page>

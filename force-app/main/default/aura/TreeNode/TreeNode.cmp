@@ -1,0 +1,56 @@
+<aura:component >
+    <aura:attribute name="node" type="Object" />
+    <aura:attribute name="expanded" type="Boolean" default="false" />
+    
+    <!-- Displaying Tree Structure Starts Here -->   
+    <tr aria-level="{!v.node.Level}"  class="slds-hint-parent slds-grid">
+     
+        <td  onclick="{!c.toggle}" class="slds-tree__item slds-col slds-size--5-of-8 " scope="row">
+            <aura:if isTrue="{!v.node.items.length>0}">
+                <aura:if isTrue="{!v.expanded}">
+                    <lightning:icon iconName="utility:chevrondown" size="xx-small" alternativeText="Indicates approval"/>
+                    <aura:set attribute="else">
+                        <lightning:icon iconName="utility:chevronright" size="xx-small" alternativeText="Indicates approval"/>
+                    </aura:set>
+                </aura:if> 
+            </aura:if> 
+            
+                {!'&nbsp;&nbsp;'+v.node.Name}
+            
+        </td>
+        <td class="slds-col slds-size--2-of-8">{!v.node.Title}</td>
+        <td class="slds-col slds-size--1-of-8"><a href="javascript:void(0)" id="{!v.node.Id}" onclick="{!c.addChild}">Add Child</a></td>
+    </tr>
+    <aura:if isTrue="{!v.expanded}">
+        
+            <aura:iteration items="{!v.node.items}" var="node" indexVar="index">
+                <c:TreeNode node="{!node}" />
+            </aura:iteration>
+        
+    </aura:if>
+    <!-- Displaying Tree Structure Ends Here --> 
+    
+    <!-- Modal Starts Here -->
+    <div class="demo-only slds-hide"  aura:id="modal" >
+        <section role="dialog" tabindex="-1"  aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" >
+                <header class="slds-modal__header slds-grid">
+                    <div class="slds-col slds-size--6-of-6">
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><strong>New Record</strong></h2>
+                    </div>     
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <!-- Display the new contact form -->         
+                </div>
+                <footer class="slds-modal__footer">
+                    <div class="slds-align_absolute-center">
+                        <button class="slds-button slds-button_brand"  onclick="">Save</button>
+                        <button class="slds-button slds-button_neutral" onclick="{!c.hideModal}">Cancel</button>
+                    </div>
+                </footer> 
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    <!-- Modal Ends Here -->    
+</aura:component>

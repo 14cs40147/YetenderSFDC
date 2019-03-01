@@ -1,0 +1,16 @@
+<apex:page standardController="Account" renderAs="pdf" >
+<apex:form >
+<Apex:pageBlock >
+<apex:pageBlockSection title="Info">
+<apex:inputField value="{!Account.Name}"/>
+</apex:pageBlockSection>
+</Apex:pageBlock>
+
+
+<apex:outputPanel id="thePanel" rendered="false" layout="block">My div</apex:outputPanel>
+
+
+</apex:form>
+
+  
+</apex:page>

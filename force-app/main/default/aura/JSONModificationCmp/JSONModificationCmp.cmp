@@ -1,0 +1,43 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="objInstance" type="Object"/>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="First Name">First Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Phone">Phone</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" data-label="First Name">
+                    <div class="slds-truncate" title="First Name">
+                        <ui:inputText value="{!v.objInstance.FirstName}" required="true"/>
+                    </div>
+                </th>
+                <td data-label="Last Name">
+                    <div class="slds-truncate" title="Last Name">
+                        <ui:inputText value="{!v.objInstance.LastName}" required="true"/>
+                    </div>
+                </td>
+                <td data-label="Close Date">
+                    <div class="slds-truncate" title="Phone">
+                        <ui:inputPhone value="{!v.objInstance.Phone}" />
+                    </div>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align:center;margin-top:2%;">
+        <lightning:button label="submit" variant="brand" iconName="utility:save" iconPosition="left" onclick="{!c.doSubmit}"/>
+    </div>
+    
+</aura:component>

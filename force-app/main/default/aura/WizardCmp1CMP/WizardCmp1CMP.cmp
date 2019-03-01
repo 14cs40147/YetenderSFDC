@@ -1,0 +1,28 @@
+<aura:component >
+    <aura:attribute name="currentStep" type="Integer" default="1" />
+    <aura:attribute name="direction" type="String" default="left" />
+    <aura:attribute name="updateStep" type="Aura.Action"  />
+    <center class="{!v.direction}" style="background-color:grey;">
+        <span data-action="next" class="slds-float_right slds-m-right_small" onclick="{!c.updateStep}" style="background-color:white;">
+            <lightning:icon iconName="utility:chevronright" size="small"/>
+        </span><br/>
+        <p>
+        	Tool will create a metadata file.
+        Then the metadata file is uploaded to the utility.
+        Utility uses the metadata file to create an image of the metadata on the cloud.
+        The administrator will extract the workflow related information in a predetermined format.
+        The workflow file is uploaded using the utility tool to create the required workflows.
+        Validation is completed when a successful  trail workflow run is conducted using sample data.
+        The application is now ready to use by the respective user as per access.
+        
+        About Tool
+        This tool enables the administrator to migrate metadata and workflow rules for a particular business to the cloud.
+        Access control can be provided by the administrator as required.
+        Using the Digital trackwise the administrator can perform audit on the workflow rule.
+        Can monitor statutory complaints.
+        
+        </p>
+        
+    </center>
+    
+</aura:component>

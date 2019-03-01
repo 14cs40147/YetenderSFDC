@@ -1,0 +1,18 @@
+<apex:page controller="FileUploadController">
+<script type="text/javascript">
+    function uploadFiles(input)
+    {
+        for(var i =0; i<input.files.length; i++)
+        {           
+            
+            console.log(input.files[i]);                
+        }           
+    }
+
+</script>
+
+<apex:sectionHeader title="Visualforce Example" subtitle="File Upload Example"/>
+<html>
+<input type="file" name="files[]" multiple="multiple" onchange="uploadFiles(this);"/>
+   </html>
+</apex:page>

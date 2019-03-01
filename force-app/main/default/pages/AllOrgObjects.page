@@ -1,0 +1,10 @@
+<apex:page controller="AllOrgObjectsController">
+    
+    <apex:form >
+        <apex:pageBlock title="Objects">
+            <apex:selectList size="1">
+                <apex:selectOptions value="{!Objects}"></apex:selectOptions>
+            </apex:selectList>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component >
+	Parent Component
+    <c:ChildCmp clickMe="{!c.clickMe}"/>
+</aura:component>

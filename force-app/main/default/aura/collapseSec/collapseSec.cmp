@@ -1,0 +1,58 @@
+<aura:component >
+    <nav role="navigation" aria-label="Breadcrumbs">
+        <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+            <li class="slds-breadcrumb__item slds-text-title_caps"><a href="javascript:void(0);">Assessments</a></li>
+            <li class="slds-breadcrumb__item slds-text-title_caps"><a href="javascript:void(0);">Levels</a></li>
+        </ol>
+    </nav>
+    
+    <div class="slds-p-around--large ">
+        <div class="slds-page-header" style="cursor: pointer;" >
+            <section class="slds-clearfix">
+                <div class="slds-float--left 123 slds-show" id="123" onclick="{!c.sectionHideShow}">
+                    <lightning:icon aura:id="articleOne" iconName="utility:add" size="x-small" alternativeText="Indicates add"/>   
+                </div>
+                <div class="slds-float--left slds-hide 123" id="123" onclick="{!c.sectionHideShow}">
+                    <lightning:icon aura:id="articleOne" iconName="utility:dash" size="x-small" alternativeText="Indicates dash"/>       
+                </div>
+                
+                <div class="slds-m-left--large">Section 1</div>
+            </section>
+        </div>
+        
+        <div class="slds-hide slds-p-around--medium 123" style="background-color:lightgrey; height: 60px;border-radius:10px; margin-top:10px;">
+            <ui:inputText value="Hello" label="Name"/>
+
+        </div>
+        <div class="slds-hide slds-p-around--medium 123"  style="background-color:lightgrey; height: 60px;border-radius:10px; margin-top:10px;">
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+        </div>
+        
+         <div class="slds-page-header" style="cursor: pointer;" >
+            <section class="slds-clearfix">
+                <div class="slds-float--left 1234 slds-show" id="1234" onclick="{!c.sectionHideShow}">
+                    <lightning:icon aura:id="articleOne" iconName="utility:add" size="x-small" alternativeText="Indicates add"/>   
+                </div>
+                <div class="slds-float--left slds-hide 1234" id="1234" onclick="{!c.sectionHideShow}">
+                    <lightning:icon aura:id="articleOne" iconName="utility:dash" size="x-small" alternativeText="Indicates dash"/>       
+                </div>
+                
+                <div class="slds-m-left--large">Section 2</div>
+            </section>
+        </div>
+        
+        <div class="slds-hide slds-p-around--medium 1234" style="background-color:lightgrey; height: 60px;border-radius:10px; margin-top:10px;">
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+        </div>
+        <div class="slds-hide slds-p-around--medium 1234"  style="background-color:lightgrey; height: 60px;border-radius:10px; margin-top:10px;">
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+            section one is ready.section one is ready.section one is ready.
+        </div>
+        
+    </div>
+</aura:component>

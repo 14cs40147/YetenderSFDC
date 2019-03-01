@@ -1,0 +1,17 @@
+public class XMLParsingDemo {
+    
+    public static void parseXML(){
+        String xml = '<xml xmlns:ns0="http://ns0"><ns0:Identifier><ns0:IdentifierTypeCode>202306</ns0:IdentifierTypeCode><ns0:IdentifierTypeDescription>MENumber</ns0:IdentifierTypeDescription><ns0:IdentifierValueText>xxxxx</ns0:IdentifierValueText><ns0:IdentifierStatusCode>0</ns0:IdentifierStatusCode><ns0:IdentifierStatusDescription>Active</ns0:IdentifierStatusDescription><ns0:IdentifierEffectiveDate>2008-02-1522:07:54.0</ns0:IdentifierEffectiveDate><ns0:IdentifierDefaultFlag>Y</ns0:IdentifierDefaultFlag><ns0:DataSourceProviderID>200015</ns0:DataSourceProviderID><ns0:DataSourceProviderName>CompA</ns0:DataSourceProviderName><ns0:ProfileID>111111</ns0:ProfileID></ns0:Identifier><ns0:Identifier><ns0:IdentifierTypeCode>202305</ns0:IdentifierTypeCode><ns0:IdentifierTypeDescription>DEANumber</ns0:IdentifierTypeDescription><ns0:IdentifierValueText>kkkkkk</ns0:IdentifierValueText><ns0:IdentifierStatusCode>0</ns0:IdentifierStatusCode><ns0:IdentifierStatusDescription>Active</ns0:IdentifierStatusDescription><ns0:IdentifierEffectiveDate>2008-02-1612:39:24.0</ns0:IdentifierEffectiveDate><ns0:IdentifierDefaultFlag>Y</ns0:IdentifierDefaultFlag><ns0:DataSourceProviderID>200024</ns0:DataSourceProviderID><ns0:DataSourceProviderName>CompA</ns0:DataSourceProviderName><ns0:ProfileID>222222</ns0:ProfileID></ns0:Identifier><ns0:Identifier><ns0:IdentifierTypeCode>202325</ns0:IdentifierTypeCode><ns0:IdentifierTypeDescription>PhysicianNumber</ns0:IdentifierTypeDescription><ns0:IdentifierValueText>yyyyy</ns0:IdentifierValueText><ns0:IdentifierStatusCode>0</ns0:IdentifierStatusCode><ns0:IdentifierStatusDescription>Active</ns0:IdentifierStatusDescription><ns0:IdentifierEffectiveDate>2011-11-1620:44:42.0</ns0:IdentifierEffectiveDate><ns0:IdentifierDefaultFlag>Y</ns0:IdentifierDefaultFlag><ns0:DataSourceProviderID>200069</ns0:DataSourceProviderID><ns0:DataSourceProviderName>CompA</ns0:DataSourceProviderName><ns0:ProfileID>3333333</ns0:ProfileID></ns0:Identifier><ns0:Identifier><ns0:IdentifierTypeCode>202300</ns0:IdentifierTypeCode><ns0:IdentifierTypeDescription>SFAID</ns0:IdentifierTypeDescription><ns0:IdentifierValueText>zzzzzz</ns0:IdentifierValueText><ns0:IdentifierStatusCode>0</ns0:IdentifierStatusCode><ns0:IdentifierStatusDescription>Active</ns0:IdentifierStatusDescription><ns0:IdentifierEffectiveDate>2003-02-1420:13:47.0</ns0:IdentifierEffectiveDate><ns0:IdentifierDefaultFlag>Y</ns0:IdentifierDefaultFlag><ns0:DataSourceProviderID>200078</ns0:DataSourceProviderID><ns0:DataSourceProviderName>CompA</ns0:DataSourceProviderName><ns0:ProfileID>444444</ns0:ProfileID></ns0:Identifier></xml>';
+        Dom.Document document = new Dom.Document();
+        document.load(xml);
+        
+        for (DOM.XmlNode node : document.getRootElement().getChildren()){
+            DOM.XmlNode description = node.getChildElement('IdentifierTypeDescription', 'http://ns0');
+            DOM.XmlNode value = node.getChildElement('IdentifierValueText', 'http://ns0');
+            
+            if (description != null && value != null){
+                system.debug(description.getText() + ' = ' + value.getText());
+            }
+        }
+    }
+}

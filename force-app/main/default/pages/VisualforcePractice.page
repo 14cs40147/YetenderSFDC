@@ -1,0 +1,10 @@
+<apex:page standardController="Account" applyBodyTag="false">
+    <apex:slds /> 
+ 
+    <!-- any Visualforce component should be outside SLDS scoping element -->
+    <apex:outputField value="{!Account.OwnerId}" /> 
+ 
+    <div class="slds-scope">
+    <!-- SLDS markup here -->
+    </div>
+</apex:page>
